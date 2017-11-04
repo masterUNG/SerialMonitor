@@ -102,7 +102,11 @@ public class Serial_monitor extends Activity {
                 public void onRead(int size) {
                     byte[] buf = new byte[size];
                     mPhysicaloid.read(buf, size);
-                    tvAppend(tvRead, Html.fromHtml("<font color=blue>" + new String(buf) + "</font>"));
+
+                    String strData = new String(buf);
+                    tvAppend(tvRead, strData);
+
+                    //tvAppend(tvRead, Html.fromHtml("<font color=blue>" + new String(buf) + "</font>"));
                 }
             });
         } else {
